@@ -1,1 +1,1 @@
-Deprecated, go for official version https://pypi.org/project/azure-opentelemetry-exporter-azuremonitor/.
+Deprecated, go for official version https://pypi.org/project/azure-monitor-opentelemetry-exporter/.
