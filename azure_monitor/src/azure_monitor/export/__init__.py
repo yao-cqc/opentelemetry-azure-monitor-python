@@ -114,16 +114,10 @@ class BaseExporter:
         """
         if len(envelopes) > 0:
             try:
-                response = requests.post(
-                    url=self.options.endpoint,
-                    data=json.dumps(envelopes),
-                    headers={
-                        "Accept": "application/json",
-                        "Content-Type": "application/json; charset=utf-8",
-                    },
-                    timeout=self.options.timeout,
-                    proxies=self.options.proxies,
+                logger.warning(
+                    "Force time out. [Debug]."
                 )
+                return ExportResult.FAILED_RETRYABLE
             except requests.Timeout:
                 logger.warning(
                     "Request time out. Ingestion may be backed up. Retrying."
