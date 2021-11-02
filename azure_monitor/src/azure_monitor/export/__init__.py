@@ -3,6 +3,7 @@
 import json
 import logging
 import typing
+import time
 from enum import Enum
 from urllib.parse import urlparse
 
@@ -114,6 +115,7 @@ class BaseExporter:
         """
         if len(envelopes) > 0:
             try:
+                time.sleep(self.options.timeout)
                 logger.warning(
                     "Force time out. [Debug]."
                 )
