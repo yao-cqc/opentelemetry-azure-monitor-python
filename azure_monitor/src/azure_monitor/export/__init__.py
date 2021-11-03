@@ -114,6 +114,12 @@ class BaseExporter:
         """
         if len(envelopes) > 0:
             try:
+                logger.warning(
+                    "Dump envolopes -----------------------"
+                )
+                logger.warning(
+                    json.dumps(envelopes)
+                )
                 response = requests.post(
                     url=self.options.endpoint,
                     data=json.dumps(envelopes),
